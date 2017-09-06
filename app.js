@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const http = require('http').Server(app);
 const bodyParser = require('body-parser');
 const sequelize = require('./db.js');
 const User = sequelize.import(__dirname + '\/models\/user.js');
@@ -29,6 +30,6 @@ app.use('/api/test', function(req,res){
 	res.send('Hello World');
 });
 
-app.listen(3000, function(){
+http.listen(3000, function(){
 	console.log("Listening on port 3000");
 });
