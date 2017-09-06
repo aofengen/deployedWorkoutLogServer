@@ -29,7 +29,7 @@ app.use('/api/log', require('./routes/log.js'))
 app.use('/api/test', function(req,res){
 	res.send('Hello World');
 });
-
-http.listen(3000, function(){
+console.log(process.env)
+http.listen(process.env.PORT || 3000, function(){
 	console.log("Listening on port 3000");
 });
