@@ -9,13 +9,15 @@ router.post('/', function(req, res) {
 	let result = req.body.log.result;
 	let user = req.user;
 	let definition = req.body.log.def;
+	let intensity = req.body.log.int;
 
 	Log
 		.create({
 			description: description,
 			result: result,
 			owner: user.id,
-			def: definition
+			def: definition,
+			int: intensity
 		})
 		.then(
 			function createSuccess(log) {
@@ -48,7 +50,6 @@ router.get('/', function(req,res) {
 //This will retrieve one workout specified by the log id
 router.get('/:id', function(req, res) {
 	let data = req.params.id;
-	console.log(data);
 	Log
 		.findOne({
 			where: {id: data}
@@ -68,13 +69,16 @@ router.put('/', function(req, res) {
 	let result = req.body.log.result;
 	let data = req.body.log.id;
 	let definition = req.body.log.def;
+	let intensity = req.body.log.int;
+
 	console.log(req);
 	Log
 	.update(
 		{
 			description: description,
 			result: result,
-			def: definition
+			def: definition,
+			int: intensity
 		},
 		{where: {id:data}}
 	).then(

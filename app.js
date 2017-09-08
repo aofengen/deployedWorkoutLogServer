@@ -5,13 +5,6 @@ const http = require('http').Server(app);
 const bodyParser = require('body-parser');
 const sequelize = require('./db.js');
 const User = sequelize.import(__dirname + '\/models\/user.js');
-// const http = require('http').Server(app);
-
-// app.use(express.static(__dirname + '/public'));
-
-// app.get('/', function(reg,res){
-// 	res.sendFile(__dirname + '/index.html');
-// })
 
 
 // User.sync();

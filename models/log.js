@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
 		description: DataTypes.STRING,
 		result: DataTypes.STRING,
 		owner: DataTypes.INTEGER,
-		def: DataTypes.STRING
+		def: DataTypes.STRING,
+		int: DataTypes.STRING
 	},{
 	});
 }
