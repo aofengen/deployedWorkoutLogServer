@@ -9,13 +9,12 @@ const Define = sequelize.import(__dirname + '\/models\/define.js');
 const Log = sequelize.import(__dirname + '\/models\/log.js');
 
 
-// User.sync();
 /* THIS WILL DROP EACH INDIVIDUAL TABLE!!! WARNING!!!
 User.sync({force: true}); 
-Define.sync({force: true})
+Define.sync({force: true});
 Log.sync({force: true});
 
-sequeliza.sync({force: true}) - will drop ALL tables at once*/
+sequelize.sync({force: true}) - will drop ALL tables at once*/
 sequelize.sync();
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
