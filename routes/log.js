@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../db.js');
-const Log = sequelize.import('../models/log');
+const Log = sequelize.import('../models/log.js');
 const User = sequelize.import('../models/user.js');
 const Definition = sequelize.import('../models/definition.js');
 
