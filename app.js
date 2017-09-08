@@ -5,7 +5,7 @@ const http = require('http').Server(app);
 const bodyParser = require('body-parser');
 const sequelize = require('./db.js');
 const User = sequelize.import(__dirname + '\/models\/user.js');
-const Define = sequelize.import(__dirname + '\/models\/defiition.js');
+const Define = sequelize.import(__dirname + '\/models\/definition.js');
 const Log = sequelize.import(__dirname + '\/models\/log.js');
 
 
