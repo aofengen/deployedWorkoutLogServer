@@ -5,14 +5,18 @@ const http = require('http').Server(app);
 const bodyParser = require('body-parser');
 const sequelize = require('./db.js');
 const User = sequelize.import(__dirname + '\/models\/user.js');
+const Define = sequelize.import(__dirname + '\/models\/define.js');
 const Log = sequelize.import(__dirname + '\/models\/log.js');
 
 
 // User.sync();
-/* THIS WILL DROP THE ENTIRE USER TABLE!!! WARNING!!!
-User.sync({force: true}); */
-sequelize.sync();
+/* THIS WILL DROP EACH INDIVIDUAL TABLE!!! WARNING!!!
+User.sync({force: true}); 
+Define.sync({force: true})
 Log.sync({force: true});
+
+sequeliza.sync({force: true}) - will drop ALL tables at once*/
+sequelize.sync();
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
 app.use(require('./middleware/validate-session.js'));
