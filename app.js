@@ -5,12 +5,14 @@ const http = require('http').Server(app);
 const bodyParser = require('body-parser');
 const sequelize = require('./db.js');
 const User = sequelize.import(__dirname + '\/models\/user.js');
+const Log = sequelize.import(__dirname + '\/models\/log.js');
 
 
 // User.sync();
 /* THIS WILL DROP THE ENTIRE USER TABLE!!! WARNING!!!
 User.sync({force: true}); */
 sequelize.sync();
+Log.sync({force: true});
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
 app.use(require('./middleware/validate-session.js'));
