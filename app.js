@@ -15,7 +15,10 @@ Define.sync({force: true});
 Log.sync({force: true});
 
 sequelize.sync({force: true}) - will drop ALL tables at once*/
-sequelize.sync({force: true});
+User.sync();
+Define.sync();
+Log.sync();
+sequelize.sync();
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
 app.use(require('./middleware/validate-session.js'));
