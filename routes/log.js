@@ -83,6 +83,7 @@ router.put('/', function(req, res) {
 		{where: {id:data}}
 	).then(
 		function updateSuccess(updatedLog) {
+			Log.sync();
 			res.json(updatedLog);
 		},
 		function updateError(err) {
