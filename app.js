@@ -14,11 +14,14 @@ User.sync({force: true});
 Define.sync({force: true});
 Log.sync({force: true});
 
+sequelize.sync({force: true}) - will drop ALL tables at once
+
 Rebuild Tables
 User.sync();
 Define.sync();
 Log.sync();
-sequelize.sync({force: true}) - will drop ALL tables at once*/
+*/
+
 sequelize.sync();
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
