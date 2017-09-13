@@ -12,7 +12,7 @@ const Log = sequelize.import(__dirname + '\/models\/log.js');
 /* THIS WILL DROP EACH INDIVIDUAL TABLE!!! WARNING!!!
 User.sync({force: true}); 
 Define.sync({force: true});
-Log.sync({force: true});
+
 
 sequelize.sync({force: true}) - will drop ALL tables at once
 
@@ -20,7 +20,7 @@ User.sync();
 Define.sync();
 Log.sync();
 */
-
+Log.sync({force: true});
 sequelize.sync();
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
