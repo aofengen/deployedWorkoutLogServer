@@ -22,7 +22,7 @@ Define.sync();
 Log.sync();
 */
 
-sequelize.sync();
+sequelize.sync({force: true});
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
 app.use(require('./middleware/validate-session.js'));
