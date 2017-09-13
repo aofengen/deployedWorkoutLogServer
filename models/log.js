@@ -1,10 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
 	return sequelize.define('log', {
-		description: DataTypes.STRING,
+		date: DataTypes.STRING,
+		desc: DataTypes.STRING,
 		result: DataTypes.STRING,
 		owner: DataTypes.INTEGER,
 		def: DataTypes.STRING,
-		int: DataTypes.STRING
+		int: DataTypes.INTEGER
 	},{
 	});
 }

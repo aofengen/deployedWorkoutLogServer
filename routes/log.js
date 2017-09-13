@@ -5,6 +5,7 @@ const User = sequelize.import('../models/user.js');
 const Definition = sequelize.import('../models/definition.js');
 
 router.post('/', function(req, res) {
+	let date = req.body.log.date;
 	let description = req.body.log.desc;
 	let result = req.body.log.result;
 	let user = req.user;
@@ -13,7 +14,8 @@ router.post('/', function(req, res) {
 
 	Log
 		.create({
-			description: description,
+			date: date,
+			desc: description,
 			result: result,
 			owner: user.id,
 			def: definition,
